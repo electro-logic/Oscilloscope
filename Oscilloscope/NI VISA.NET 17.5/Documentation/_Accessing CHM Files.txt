@@ -1,0 +1,7 @@
+You cannot view the information in this help file if you launch the file directly from the zip file or across a networked drive. To view this help file, extract all the files in this ZIP archive and copy them to an appropriate location on your computer. 
+
+The security settings on your PC may require you to unblock the help file before you can view its contents. To unblock the help file, right-click the file, choose Properties from the shortcut menu, and then go to the Security tab. If the Unblock button is visible at the bottom of the General or Security tab, click that button and try to reopen the file.
+
+Refer to the Microsoft Knowledge Base (article ID 896358)  for more information about the security updates that prevent you from viewing HTML Help files remotely. 
+
+The primary help file is NINETVisaHelp.chm. All other Help files in this folder are embedded in NINETVisaHelp.chm. Double-click the NINETVisaHelp.chm help file to open it.

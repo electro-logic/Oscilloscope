@@ -11,14 +11,17 @@ OscilloscopeGUI is an app with a GUI that allow easy data acquisition and displa
 OscilloscopeTest contains Unit Tests for easily checking if your own oscilloscope model is compliant with library
 
 Screenshot of OscilloscopeGUI
+
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/gui.png)
 
 # Example of usage
 
 Raw data from an encoder
+
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/oscilloscope.png)
 
 Data acquired and processed with the aid of this library and a graph of velocity produced with very little code
+
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/speed_graph.png)
 
 # Dependencies:

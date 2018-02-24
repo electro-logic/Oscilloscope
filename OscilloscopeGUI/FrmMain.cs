@@ -23,8 +23,7 @@ namespace OscilloscopeGUI
             txtGnuPlotPath.Text = _gnuplot.Path;
             if (Oscilloscope.GetResources().Length==0)
             {
-                MessageBox.Show("Please connect oscilloscope first");
-                Application.Exit();
+                MessageBox.Show("Please connect oscilloscope then click on Check");
             }
         }
 

@@ -93,3 +93,7 @@ http://www.ni.com/download/ni-visa-17.5/7220/en/
 Gnuplot 5.2 (for graphs, optional)
 
 http://www.gnuplot.info/
+
+Rigol Documentation
+
+https://www.rigol.eu/products/digital-oscilloscopes/1000/

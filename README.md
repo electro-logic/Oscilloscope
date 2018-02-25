@@ -1,6 +1,6 @@
 # Oscilloscope Library and GUI for Rigol in C#
 
-This project allow to control your oscilloscope and acquire data points. 
+This project allow to remote control your oscilloscope, setup parameters and acquire data points. 
 You can save and analyze it with pc instead that with Rigol device that can be limited, difficult and time-consuming, just connect your oscilloscope with USB to computer.
 
 ## Projects
@@ -14,7 +14,6 @@ You can save and analyze it with pc instead that with Rigol device that can be l
 - OscilloscopeTest contains Unit Tests for easily checking if your own oscilloscope model is compliant with library
 
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/gui.png)
-
 *Screenshot of OscilloscopeGUI*
 
 ## Example of usage
@@ -44,9 +43,9 @@ Then you can graph your acquired data with Excel or automatically with GnuPlot
 // Display acquired data with Excel (or any other installed software that can handle CSV)
 Process.Start(csvFileName);
 
-// Draw CSV file with GNU Plot      
+// Draw a graph with GNU Plot and save it in out.png
 GnuPlot gnuPlot = new GnuPlot();
-gnuPlot.DrawGraph(csvFileName, 1);   // Graph 1 channel
+gnuPlot.DrawGraph(csvFileName, 1);   // only channel 1
 ```
 
 ## Notes
@@ -62,12 +61,10 @@ Here are some images to better understand what this library allow you to do with
 
 
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/oscilloscope.png)
-
 *Oscilloscope display*
 
 
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/speed_graph.png)
-
 *Data acquired and processed with the aid of this library and a graph of velocity of the system produced*
 
 
@@ -75,7 +72,7 @@ Here are some images to better understand what this library allow you to do with
 
 Rigol oscilloscope support Virtual Instrument Software Architecture (VISA) standard for configuring, programming, and troubleshooting instrumentation systems. 
 
-Graphs are generated with Gnuplot software to avoid reinvent the wheel. Data can be analyzed and graphed also with Excel or any software that can open CSV files.
+Graphs are generated with Gnuplot software to avoid reinventing the wheel. Data can be analyzed and graphed also with Excel or any software that can open CSV files. You can also write some code with C# to post-process CSV data and extrapolate relevant information for your application (ex. velocity profile of a system from the waveform of a revolution detector).
 
 NI-VISA Run-Time Engine 17.5
 http://www.ni.com/download/ni-visa-run-time-engine/7222/en/

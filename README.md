@@ -1,8 +1,11 @@
-# C# Rigol Oscilloscope Library and GUI
+# Oscilloscope Library and GUI for Rigol in C#
 
-This project allow to control oscilloscope and acquire up to 1M of data points from oscilloscope and analyze it with pc instead that directly with Rigol touchscreen display that can be difficult and time-consuming.
+This project allow to control your oscilloscope and acquire data points. 
+You can save and analyze it with pc instead that with Rigol device that can be limited, difficult and time-consuming, just connect your oscilloscope with USB to computer.
 
-- OscilloscopeLib is a library for handling Rigol's Oscilloscopes (tested only with DS1102E)
+## Projects
+
+- OscilloscopeLib is a, object-oriented library for handling Rigol's Oscilloscopes (tested only with DS1102E)
 
 - OscilloscopeCLI is a command line sample usage of OscilloscopeLib
 
@@ -10,12 +13,13 @@ This project allow to control oscilloscope and acquire up to 1M of data points f
 
 - OscilloscopeTest contains Unit Tests for easily checking if your own oscilloscope model is compliant with library
 
-
-Screenshot of OscilloscopeGUI
-
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/gui.png)
 
-# Example of usage
+*Screenshot of OscilloscopeGUI*
+
+## Example of usage
+
+To configure and acquire data you can write code like the following:
 
 ```
 // 1M data point acquisition
@@ -34,27 +38,50 @@ void LongMemoryAcquisitionExample()
 }
 ```
 
-This project is born as an auxiliary project so code could not be of production-quality.
-I have written in 2014 this library to check the velocity profile of a stepper motor with a real-time driver that I have implemented.
-I think that can be useful to others so I have released it with updated NI-VISA 17.5 to support Windows 10.
+Then you can graph your acquired data with Excel or automatically with GnuPlot
 
-Here are some images to better understand what this library allow to do with very little work.
+```
+// Display acquired data with Excel (or any other installed software that can handle CSV)
+Process.Start(csvFileName);
 
-Raw data from an encoder
+// Draw CSV file with GNU Plot      
+GnuPlot gnuPlot = new GnuPlot();
+gnuPlot.DrawGraph(csvFileName, 1);   // Graph 1 channel
+```
+
+## Notes
+
+This project is born as an auxiliary project so code could not be of production-quality. If there is interest I can improve it, anyway any contribution is welcome.
+
+I have initially written this library in 2014 to check the velocity profile of a stepper motor with a real-time driver that I have implemented.
+
+Now I think that this project can be useful to others that own a RIgol oscilloscope so I have released it with updated NI-VISA 17.5 to support Windows 10.
+
+
+Here are some images to better understand what this library allow you to do with very little work.
+
 
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/oscilloscope.png)
 
-Data acquired and processed with the aid of this library and a graph of velocity produced with very little code
+*Oscilloscope display*
+
 
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/speed_graph.png)
 
-# Dependencies:
+*Data acquired and processed with the aid of this library and a graph of velocity of the system produced*
+
+
+## Dependencies
+
+Rigol oscilloscope support Virtual Instrument Software Architecture (VISA) standard for configuring, programming, and troubleshooting instrumentation systems. 
+
+Graphs are generated with Gnuplot software to avoid reinvent the wheel. Data can be analyzed and graphed also with Excel or any software that can open CSV files.
 
 NI-VISA Run-Time Engine 17.5
 http://www.ni.com/download/ni-visa-run-time-engine/7222/en/
 
-NI-VISA SDK 17.5 (for developing)
+NI-VISA SDK 17.5 (for compiling code)
 http://www.ni.com/download/ni-visa-17.5/7220/en/
 
-Gnuplot (for graphs)
+Gnuplot 5.2 (for graphs, optional)
 http://www.gnuplot.info/

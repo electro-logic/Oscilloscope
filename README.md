@@ -72,13 +72,15 @@ Here are some images to better understand what this library allow you to do with
 *Data acquired and processed with the aid of this library and a graph of velocity of the system produced*
 
 
+You can also write some code with C# to post-process CSV data and extrapolate relevant information for your application (ex. I used it to get velocity profile of my system from the waveform of a revolution detector).
+
+
 ## Dependencies
 
 Rigol oscilloscope support Virtual Instrument Software Architecture (VISA) standard for configuring, programming, and troubleshooting instrumentation systems. 
 
 Graphs are generated with Gnuplot software to avoid reinventing the wheel. Data can be analyzed and graphed also with Excel or any software that can open CSV files.
 
-You can also write some code with C# to post-process CSV data and extrapolate relevant information for your application (ex. I used it to get velocity profile of my system from the waveform of a revolution detector).
 
 NI-VISA Run-Time Engine 17.5
 

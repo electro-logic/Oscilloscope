@@ -99,11 +99,13 @@ Gnuplot 5.2 (for graphs, optional)
 
 http://www.gnuplot.info/
 
-NB: Gnuplot keyboard commands to interact with graph are available at Gnuplot command line with the command "show bind", here are reported some:
+**NB:** Gnuplot keyboard commands to interact with graph are available at Gnuplot command line (just launch gnuplot.exe from Start) with the command "show bind", here are reported some:
 
-- a	autoscale
-- +	zoom in
-- -	zoom out
+- a		autoscale
+- \+	zoom in
+- \-	zoom out
+
+Right click with the mouse to zoom a section of the graph
 
 *Warning:* Graph with 1M points can be slow to display and interact
 

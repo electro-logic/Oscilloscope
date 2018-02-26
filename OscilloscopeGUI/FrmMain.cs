@@ -59,6 +59,8 @@ namespace OscilloscopeGUI
                 MessageBox.Show("Please connect device first");
                 return;
             }
+
+            Cursor = Cursors.WaitCursor;
             _gnuplot.Path = txtGnuPlotPath.Text;
 
             _osc.Run();
@@ -118,6 +120,8 @@ namespace OscilloscopeGUI
 
             // Release oscilloscope remote control
             _osc.Close();
+
+            Cursor = Cursors.Default;
         }
 
         private void UpdatePoints(object sender, EventArgs e)
@@ -165,6 +169,7 @@ namespace OscilloscopeGUI
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // SaveCSV already close device but here we close it again for double check
             _osc?.Close();
         }
     }

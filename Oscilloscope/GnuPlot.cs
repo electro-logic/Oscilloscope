@@ -33,6 +33,13 @@ public class GnuPlot
     /// </summary>
     public void DrawGraph(string csvFileName, int numWaves, bool generatePngImage = true)
     {
+        // gnuplot.exe not found
+        if(!File.Exists(Path))
+        {
+            MessageBox.Show("gnuplot.exe not found. Please check the path.");
+            return;
+        }
+
         var gnuPlot = new Process();
         gnuPlot.StartInfo.FileName = Path;
         gnuPlot.StartInfo.CreateNoWindow = true;

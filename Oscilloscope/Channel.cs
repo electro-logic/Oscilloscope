@@ -91,7 +91,7 @@ public class Channel
 
         for (int i = 0; i < pointsCount; i++)
         {
-            // Strip off 10 bit header and loop through data and termination characters
+            // Strip off 10 byte header and loop through data and termination characters
             int rawData = (int)respose[i + 10];
 
             // Scale the vertical data from bytes to volts
@@ -144,7 +144,7 @@ public class Channel
 
         for (int i = 0; i < pointsCount; i++)
         {
-            // Strip off 10 bit header and loop through data and termination characters
+            // Strip off 10 byte header and loop through data and termination characters
             int rawData = (int)respose[i + 10];
 
             // Scale the vertical data from bytes to volts

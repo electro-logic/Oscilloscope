@@ -29,7 +29,7 @@ public class GnuPlot
     public string Path { get; set; }
 
     /// <summary>
-    /// Graph input CSV with GnuPlot. If imageOut a PNG image is saved into out.png and displayed. 
+    /// Graph input CSV with GnuPlot. NumWaves is the number of channels to draw. If imageOut a PNG image is saved into out.png and displayed. 
     /// </summary>
     public void DrawGraph(string csvFileName, int numWaves, bool generatePngImage = true)
     {

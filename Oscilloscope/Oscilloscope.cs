@@ -3,6 +3,7 @@
 using NationalInstruments.Visa;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 
@@ -49,10 +50,7 @@ public partial class Oscilloscope
         // Create Message based session, open first resource found
         _mbSession = (MessageBasedSession)_resManager.Open(_resManager.Find(resource).First());
         _mbSession.TimeoutMilliseconds = 1000 * 60 * 5;
-
-        // Rigol DS1102E Long Memory can acquire 1M points (1048576 bytes)            
-        //_mbSession.DefaultBufferSize = 1048576 * 2;     // TODO: Remove x2
-
+        
         // Create channel object for every physical channel of oscilloscope
         for (uint i = 0; i < _numChannels; i++)
         {
@@ -123,7 +121,10 @@ public partial class Oscilloscope
 
     public byte[] Read()
     {
-        return _mbSession.RawIO.Read();
+        // Rigol DS1102E Long Memory can acquire 1M points (1048576 bytes + 10 bytes header)            
+        var readBytes = _mbSession.RawIO.Read(1048586, out var status);
+        Debug.WriteLine(string.Format("Readed {0} bytes from device with Status {1}", readBytes.Length, status));
+        return readBytes;
     }
 
     /// <summary>

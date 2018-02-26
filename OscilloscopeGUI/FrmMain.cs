@@ -20,20 +20,45 @@ namespace OscilloscopeGUI
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            // Update GnuPlot path
             txtGnuPlotPath.Text = _gnuplot.Path;
-            if (Oscilloscope.GetResources().Length==0)
+            RefreshDevices();
+            // There are devices connected?
+            if (cbResources.Items.Count == 0)
             {
-                MessageBox.Show("Please connect oscilloscope then click on Check");
+                MessageBox.Show("Please connect oscilloscope then click on Refresh");
             }
         }
 
-        private void btnOpen_Click(object sender, EventArgs e)
+        private void btnConnect_Click(object sender, EventArgs e)
         {
             _osc = new Oscilloscope(cbResources.Text);
         }
 
         private void btnSaveCSV_Click(object sender, EventArgs e)
         {
+            SaveCSV();
+        }
+
+        private void btnRefreshDevices_Click(object sender, EventArgs e)
+        {
+            RefreshDevices();
+        }
+
+        public void RefreshDevices()
+        {
+            cbResources.Items.Clear();
+            cbResources.Items.AddRange(Oscilloscope.GetResources());
+            cbResources.SelectedIndex = cbResources.Items.Count - 1;
+        }
+
+        public void SaveCSV()
+        {
+            if (_osc == null)
+            {
+                MessageBox.Show("Please connect device first");
+                return;
+            }
             _gnuplot.Path = txtGnuPlotPath.Text;
 
             _osc.Run();
@@ -59,7 +84,7 @@ namespace OscilloscopeGUI
             }
 
             _osc.SetTriggerSweep(TriggerSweep.Single);
-            _osc.Stop();
+            //_osc.Stop();
             // Run and wait trigger
             _osc.Run();
             _osc.WaitTriggerStop();
@@ -138,11 +163,9 @@ namespace OscilloscopeGUI
             lblPoints.Text = points.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            cbResources.Items.AddRange(Oscilloscope.GetResources());
-            cbResources.SelectedIndex = cbResources.Items.Count - 1;
+            _osc?.Close();
         }
-
     }
 }

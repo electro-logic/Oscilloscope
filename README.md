@@ -18,6 +18,11 @@ You can save and analyze it with pc instead that with Rigol device that can be l
 
 *Screenshot of OscilloscopeGUI*
 
+![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/gnuplot.png)
+
+*Screenshot of automatically generated Gnuplot graph (zoomable)*
+
+
 ## Example of usage
 
 To configure and acquire data you can write code like the following:
@@ -93,6 +98,14 @@ http://www.ni.com/download/ni-visa-17.5/7220/en/
 Gnuplot 5.2 (for graphs, optional)
 
 http://www.gnuplot.info/
+
+NB: Gnuplot keyboard commands to interact with graph are available at Gnuplot command line with the command "show bind", here are reported some:
+
+- a	autoscale
+- +	zoom in
+- -	zoom out
+
+*Warning:* Graph with 1M points can be slow to display and interact
 
 Rigol Documentation
 

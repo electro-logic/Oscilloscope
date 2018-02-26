@@ -28,8 +28,9 @@
     /// </summary>
     private void InitializeComponent()
     {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.cbResources = new System.Windows.Forms.ComboBox();
-            this.btnOpen = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblPoints = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,7 +48,7 @@
             this.rbOutGnuPlot = new System.Windows.Forms.RadioButton();
             this.rbOutPNG = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRefreshDevices = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtGnuPlotPath = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -59,18 +60,18 @@
             this.cbResources.FormattingEnabled = true;
             this.cbResources.Location = new System.Drawing.Point(12, 12);
             this.cbResources.Name = "cbResources";
-            this.cbResources.Size = new System.Drawing.Size(280, 21);
+            this.cbResources.Size = new System.Drawing.Size(200, 21);
             this.cbResources.TabIndex = 99;
             // 
-            // btnOpen
+            // btnConnect
             // 
-            this.btnOpen.Location = new System.Drawing.Point(90, 39);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 23);
-            this.btnOpen.TabIndex = 1;
-            this.btnOpen.Text = "&Open";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            this.btnConnect.Location = new System.Drawing.Point(12, 41);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(280, 23);
+            this.btnConnect.TabIndex = 1;
+            this.btnConnect.Text = "&Connect to selected device";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // groupBox1
             // 
@@ -223,7 +224,7 @@
             this.btnSaveCSV.Name = "btnSaveCSV";
             this.btnSaveCSV.Size = new System.Drawing.Size(280, 23);
             this.btnSaveCSV.TabIndex = 100;
-            this.btnSaveCSV.Text = "Save CSV and output";
+            this.btnSaveCSV.Text = "&Save CSV and output";
             this.btnSaveCSV.UseVisualStyleBackColor = true;
             this.btnSaveCSV.Click += new System.EventHandler(this.btnSaveCSV_Click);
             // 
@@ -258,15 +259,15 @@
             this.label6.TabIndex = 103;
             this.label6.Text = "Output";
             // 
-            // button1
+            // btnRefreshDevices
             // 
-            this.button1.Location = new System.Drawing.Point(12, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 104;
-            this.button1.Text = "Check";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRefreshDevices.Location = new System.Drawing.Point(218, 12);
+            this.btnRefreshDevices.Name = "btnRefreshDevices";
+            this.btnRefreshDevices.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshDevices.TabIndex = 104;
+            this.btnRefreshDevices.Text = "&Refresh";
+            this.btnRefreshDevices.UseVisualStyleBackColor = true;
+            this.btnRefreshDevices.Click += new System.EventHandler(this.btnRefreshDevices_Click);
             // 
             // label3
             // 
@@ -291,18 +292,20 @@
             this.ClientSize = new System.Drawing.Size(305, 308);
             this.Controls.Add(this.txtGnuPlotPath);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRefreshDevices);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.rbOutPNG);
             this.Controls.Add(this.rbOutGnuPlot);
             this.Controls.Add(this.btnSaveCSV);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.cbResources);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Oscilloscope GUI";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -316,7 +319,7 @@
     #endregion
 
     private System.Windows.Forms.ComboBox cbResources;
-		private System.Windows.Forms.Button btnOpen;
+		private System.Windows.Forms.Button btnConnect;
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
@@ -334,7 +337,7 @@
 		private System.Windows.Forms.RadioButton rbOutGnuPlot;
 		private System.Windows.Forms.RadioButton rbOutPNG;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnRefreshDevices;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.TextBox txtGnuPlotPath;
   }

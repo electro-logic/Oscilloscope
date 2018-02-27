@@ -97,6 +97,7 @@ You can also write some code with C# to post-process CSV data and extrapolate re
 ## VISA SDK
 
 Rigol oscilloscope support Virtual Instrument Software Architecture (VISA) standard for configuring, programming, and troubleshooting instrumentation systems. 
+
 To create software that support VISA devices you need to install VISA SDK:
 
 NI-VISA SDK 17.5 (749 MB, only for compiling code)
@@ -105,8 +106,9 @@ http://www.ni.com/download/ni-visa-17.5/7220/en/
 
 Assembly referenced by projects are located into:
 
-C:\Program Files\IVI Foundation\VISA\Microsoft.NET\Framework64\v4.0.30319\NI VISA.NET 17.5
-C:\Program Files\IVI Foundation\VISA\Microsoft.NET\Framework64\v2.0.50727\VISA.NET Shared Components 5.8.0
+- C:\Program Files\IVI Foundation\VISA\Microsoft.NET\Framework64\v4.0.30319\NI VISA.NET 17.5
+
+- C:\Program Files\IVI Foundation\VISA\Microsoft.NET\Framework64\v2.0.50727\VISA.NET Shared Components 5.8.0
 
 See Rigol Documentation for commands to interact with the oscilloscope
 

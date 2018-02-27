@@ -24,7 +24,7 @@ You need to install NI-VISA Run-Time Engine 17.5 (120 MB) to run the software
 
 http://www.ni.com/download/ni-visa-run-time-engine/7222/en/
 
-See notes for informations about Gnuplot (needed to generate graphs)
+See GNUPLOT section for informations about graphs
 
 ## Screenshoots
 
@@ -94,22 +94,28 @@ Here are some images to better understand what this library allow you to do with
 You can also write some code with C# to post-process CSV data and extrapolate relevant information for your application (ex. I used it to get velocity profile of my system from the waveform of a revolution detector).
 
 
-## Dependencies
+## VISA SDK
 
 Rigol oscilloscope support Virtual Instrument Software Architecture (VISA) standard for configuring, programming, and troubleshooting instrumentation systems. 
+To create software that support VISA devices you need to install VISA SDK:
 
-Graphs are generated with Gnuplot software to avoid reinventing the wheel. Data can be analyzed and graphed also with Excel or any software that can open CSV files.
-
-
-NI-VISA SDK 17.5 (for compiling code)
+NI-VISA SDK 17.5 (749 MB, only for compiling code)
 
 http://www.ni.com/download/ni-visa-17.5/7220/en/
 
+Assembly referenced by projects are located into:
 
-Rigol Documentation
+C:\Program Files\IVI Foundation\VISA\Microsoft.NET\Framework64\v4.0.30319\NI VISA.NET 17.5
+C:\Program Files\IVI Foundation\VISA\Microsoft.NET\Framework64\v2.0.50727\VISA.NET Shared Components 5.8.0
+
+See Rigol Documentation for commands to interact with the oscilloscope
 
 https://www.rigol.eu/products/digital-oscilloscopes/1000/
 
+
+## GNUPLOT
+
+Graphs are generated with Gnuplot software to avoid reinventing the wheel. Data can be analyzed and graphed also with Excel or any software that can open CSV files.
 
 Gnuplot 5.2 (for graphs, optional)
 

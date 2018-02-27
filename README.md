@@ -4,6 +4,7 @@ This project allow to remote control your oscilloscope, setup parameters and acq
 
 You can save and analyze it with pc instead that with Rigol device that can be limited, difficult and time-consuming, just connect your oscilloscope with USB to computer.
 
+
 ## Projects
 
 - OscilloscopeLib is a, object-oriented library for handling Rigol's Oscilloscopes (tested only with DS1102E)
@@ -14,17 +15,21 @@ You can save and analyze it with pc instead that with Rigol device that can be l
 
 - OscilloscopeTest contains Unit Tests for easily checking if your own oscilloscope model is compliant with library
 
+
 ## Compiled Software
 
 You can download compiled software here:
 
 v1.0:	https://github.com/electro-logic/Oscilloscope/blob/master/Binaries/Oscilloscope_1_0.zip?raw=true
 
-You need to install NI-VISA Run-Time Engine 17.5 (120 MB) to run the software
+To run the software you need to install:
 
-http://www.ni.com/download/ni-visa-run-time-engine/7222/en/
+- NI-VISA Run-Time Engine 17.5 (120 MB) http://www.ni.com/download/ni-visa-run-time-engine/7222/en/
 
-See GNUPLOT section for informations about graphs
+- .NET Framework 4.7.1 https://www.microsoft.com/en-us/download/details.aspx?id=56116
+
+- Gnuplot 5.2 (optional for graphs, 25 MB) http://www.gnuplot.info/ see GNUPLOT section for more informations
+
 
 ## Screenshoots
 
@@ -68,6 +73,7 @@ Process.Start(csvFileName);
 GnuPlot gnuPlot = new GnuPlot();
 gnuPlot.DrawGraph(csvFileName, 1);   // only channel 1
 ```
+
 
 ## Notes
 
@@ -131,4 +137,4 @@ http://www.gnuplot.info/
 
 Right click with the mouse to zoom a section of the graph
 
-*Warning:* Graph with 1M points can be slow to display and interact
+*Warning:* Graph with 1M points can be slow to display and interact, another way can be analyzing data with Excel or another software

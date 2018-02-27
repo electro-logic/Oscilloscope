@@ -14,13 +14,27 @@ You can save and analyze it with pc instead that with Rigol device that can be l
 
 - OscilloscopeTest contains Unit Tests for easily checking if your own oscilloscope model is compliant with library
 
+## Compiled Software
+
+You can download compiled software here:
+
+v1.0:	https://github.com/electro-logic/Oscilloscope/blob/master/Binaries/Oscilloscope_1_0.zip?raw=true
+
+You need to install NI-VISA Run-Time Engine 17.5 (120 MB) to run the software
+
+http://www.ni.com/download/ni-visa-run-time-engine/7222/en/
+
+See notes for informations about Gnuplot (needed to generate graphs)
+
+## Screenshoots
+
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/gui.png)
 
-*Screenshot of OscilloscopeGUI*
+*OscilloscopeGUI*
 
 ![alt text](https://raw.githubusercontent.com/electro-logic/Oscilloscope/master/Docs/gnuplot.png)
 
-*Screenshot of automatically generated Gnuplot graph (zoomable)*
+*Automatically generated Gnuplot graph (zoomable)*
 
 
 ## Example of usage
@@ -87,13 +101,15 @@ Rigol oscilloscope support Virtual Instrument Software Architecture (VISA) stand
 Graphs are generated with Gnuplot software to avoid reinventing the wheel. Data can be analyzed and graphed also with Excel or any software that can open CSV files.
 
 
-NI-VISA Run-Time Engine 17.5
-
-http://www.ni.com/download/ni-visa-run-time-engine/7222/en/
-
 NI-VISA SDK 17.5 (for compiling code)
 
 http://www.ni.com/download/ni-visa-17.5/7220/en/
+
+
+Rigol Documentation
+
+https://www.rigol.eu/products/digital-oscilloscopes/1000/
+
 
 Gnuplot 5.2 (for graphs, optional)
 
@@ -108,7 +124,3 @@ http://www.gnuplot.info/
 Right click with the mouse to zoom a section of the graph
 
 *Warning:* Graph with 1M points can be slow to display and interact
-
-Rigol Documentation
-
-https://www.rigol.eu/products/digital-oscilloscopes/1000/

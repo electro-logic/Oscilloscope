@@ -116,7 +116,8 @@ public partial class Oscilloscope
 
     public string ReadString()
     {
-        return _mbSession.RawIO.ReadString();
+        // Read the response; omit end-of-line characters.
+        return _mbSession.RawIO.ReadString().TrimEnd( '\r', '\n');
     }
 
     public byte[] Read()

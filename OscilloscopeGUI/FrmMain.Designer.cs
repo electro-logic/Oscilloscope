@@ -58,16 +58,18 @@
             // cbResources
             // 
             this.cbResources.FormattingEnabled = true;
-            this.cbResources.Location = new System.Drawing.Point(12, 12);
+            this.cbResources.Location = new System.Drawing.Point(18, 18);
+            this.cbResources.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbResources.Name = "cbResources";
-            this.cbResources.Size = new System.Drawing.Size(200, 21);
+            this.cbResources.Size = new System.Drawing.Size(298, 28);
             this.cbResources.TabIndex = 99;
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(12, 41);
+            this.btnConnect.Location = new System.Drawing.Point(18, 63);
+            this.btnConnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(280, 23);
+            this.btnConnect.Size = new System.Drawing.Size(420, 35);
             this.btnConnect.TabIndex = 1;
             this.btnConnect.Text = "&Connect to selected device";
             this.btnConnect.UseVisualStyleBackColor = true;
@@ -85,9 +87,11 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbCh2);
             this.groupBox1.Controls.Add(this.cbCh1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 71);
+            this.groupBox1.Location = new System.Drawing.Point(18, 109);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(280, 136);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(420, 209);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acquisition";
@@ -95,18 +99,20 @@
             // lblPoints
             // 
             this.lblPoints.AutoSize = true;
-            this.lblPoints.Location = new System.Drawing.Point(92, 111);
+            this.lblPoints.Location = new System.Drawing.Point(138, 171);
+            this.lblPoints.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPoints.Name = "lblPoints";
-            this.lblPoints.Size = new System.Drawing.Size(25, 13);
+            this.lblPoints.Size = new System.Drawing.Size(36, 20);
             this.lblPoints.TabIndex = 23;
             this.lblPoints.Text = "600";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 111);
+            this.label5.Location = new System.Drawing.Point(75, 171);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.Size = new System.Drawing.Size(53, 20);
             this.label5.TabIndex = 22;
             this.label5.Text = "Points";
             // 
@@ -114,17 +120,19 @@
             // 
             this.panel1.Controls.Add(this.rbLong);
             this.panel1.Controls.Add(this.rbNormal);
-            this.panel1.Location = new System.Drawing.Point(95, 46);
+            this.panel1.Location = new System.Drawing.Point(142, 71);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(155, 24);
+            this.panel1.Size = new System.Drawing.Size(232, 37);
             this.panel1.TabIndex = 21;
             // 
             // rbLong
             // 
             this.rbLong.AutoSize = true;
-            this.rbLong.Location = new System.Drawing.Point(80, 1);
+            this.rbLong.Location = new System.Drawing.Point(120, 2);
+            this.rbLong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbLong.Name = "rbLong";
-            this.rbLong.Size = new System.Drawing.Size(49, 17);
+            this.rbLong.Size = new System.Drawing.Size(63, 24);
             this.rbLong.TabIndex = 15;
             this.rbLong.Text = "Long";
             this.rbLong.UseVisualStyleBackColor = true;
@@ -134,9 +142,10 @@
             // 
             this.rbNormal.AutoSize = true;
             this.rbNormal.Checked = true;
-            this.rbNormal.Location = new System.Drawing.Point(0, 1);
+            this.rbNormal.Location = new System.Drawing.Point(0, 2);
+            this.rbNormal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbNormal.Name = "rbNormal";
-            this.rbNormal.Size = new System.Drawing.Size(58, 17);
+            this.rbNormal.Size = new System.Drawing.Size(77, 24);
             this.rbNormal.TabIndex = 12;
             this.rbNormal.TabStop = true;
             this.rbNormal.Text = "Normal";
@@ -146,9 +155,10 @@
             // rbMaxPoints
             // 
             this.rbMaxPoints.AutoSize = true;
-            this.rbMaxPoints.Location = new System.Drawing.Point(175, 70);
+            this.rbMaxPoints.Location = new System.Drawing.Point(262, 108);
+            this.rbMaxPoints.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbMaxPoints.Name = "rbMaxPoints";
-            this.rbMaxPoints.Size = new System.Drawing.Size(69, 17);
+            this.rbMaxPoints.Size = new System.Drawing.Size(94, 24);
             this.rbMaxPoints.TabIndex = 20;
             this.rbMaxPoints.Text = "Maximum";
             this.rbMaxPoints.UseVisualStyleBackColor = true;
@@ -158,9 +168,10 @@
             // 
             this.rbNormalPoints.AutoSize = true;
             this.rbNormalPoints.Checked = true;
-            this.rbNormalPoints.Location = new System.Drawing.Point(95, 70);
+            this.rbNormalPoints.Location = new System.Drawing.Point(142, 108);
+            this.rbNormalPoints.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbNormalPoints.Name = "rbNormalPoints";
-            this.rbNormalPoints.Size = new System.Drawing.Size(58, 17);
+            this.rbNormalPoints.Size = new System.Drawing.Size(77, 24);
             this.rbNormalPoints.TabIndex = 19;
             this.rbNormalPoints.TabStop = true;
             this.rbNormalPoints.Text = "Normal";
@@ -170,36 +181,40 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 72);
+            this.label4.Location = new System.Drawing.Point(30, 111);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(97, 20);
             this.label4.TabIndex = 18;
             this.label4.Text = "Points Mode";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 49);
+            this.label2.Location = new System.Drawing.Point(18, 75);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 17;
             this.label2.Text = "Memory depth";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 25);
+            this.label1.Location = new System.Drawing.Point(52, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(76, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Channels";
             // 
             // cbCh2
             // 
             this.cbCh2.AutoSize = true;
-            this.cbCh2.Location = new System.Drawing.Point(175, 24);
+            this.cbCh2.Location = new System.Drawing.Point(262, 37);
+            this.cbCh2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbCh2.Name = "cbCh2";
-            this.cbCh2.Size = new System.Drawing.Size(74, 17);
+            this.cbCh2.Size = new System.Drawing.Size(100, 24);
             this.cbCh2.TabIndex = 14;
             this.cbCh2.Text = "Channel 2";
             this.cbCh2.UseVisualStyleBackColor = true;
@@ -210,9 +225,10 @@
             this.cbCh1.AutoSize = true;
             this.cbCh1.Checked = true;
             this.cbCh1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbCh1.Location = new System.Drawing.Point(95, 24);
+            this.cbCh1.Location = new System.Drawing.Point(142, 37);
+            this.cbCh1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbCh1.Name = "cbCh1";
-            this.cbCh1.Size = new System.Drawing.Size(74, 17);
+            this.cbCh1.Size = new System.Drawing.Size(100, 24);
             this.cbCh1.TabIndex = 13;
             this.cbCh1.Text = "Channel 1";
             this.cbCh1.UseVisualStyleBackColor = true;
@@ -220,9 +236,10 @@
             // 
             // btnSaveCSV
             // 
-            this.btnSaveCSV.Location = new System.Drawing.Point(12, 274);
+            this.btnSaveCSV.Location = new System.Drawing.Point(18, 422);
+            this.btnSaveCSV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSaveCSV.Name = "btnSaveCSV";
-            this.btnSaveCSV.Size = new System.Drawing.Size(280, 23);
+            this.btnSaveCSV.Size = new System.Drawing.Size(420, 35);
             this.btnSaveCSV.TabIndex = 100;
             this.btnSaveCSV.Text = "&Save CSV and output";
             this.btnSaveCSV.UseVisualStyleBackColor = true;
@@ -231,9 +248,10 @@
             // rbOutGnuPlot
             // 
             this.rbOutGnuPlot.AutoSize = true;
-            this.rbOutGnuPlot.Location = new System.Drawing.Point(107, 251);
+            this.rbOutGnuPlot.Location = new System.Drawing.Point(160, 386);
+            this.rbOutGnuPlot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbOutGnuPlot.Name = "rbOutGnuPlot";
-            this.rbOutGnuPlot.Size = new System.Drawing.Size(63, 17);
+            this.rbOutGnuPlot.Size = new System.Drawing.Size(85, 24);
             this.rbOutGnuPlot.TabIndex = 101;
             this.rbOutGnuPlot.Text = "GnuPlot";
             this.rbOutGnuPlot.UseVisualStyleBackColor = true;
@@ -242,9 +260,10 @@
             // 
             this.rbOutPNG.AutoSize = true;
             this.rbOutPNG.Checked = true;
-            this.rbOutPNG.Location = new System.Drawing.Point(187, 251);
+            this.rbOutPNG.Location = new System.Drawing.Point(280, 386);
+            this.rbOutPNG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbOutPNG.Name = "rbOutPNG";
-            this.rbOutPNG.Size = new System.Drawing.Size(80, 17);
+            this.rbOutPNG.Size = new System.Drawing.Size(110, 24);
             this.rbOutPNG.TabIndex = 102;
             this.rbOutPNG.TabStop = true;
             this.rbOutPNG.Text = "PNG Image";
@@ -253,17 +272,19 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(59, 251);
+            this.label6.Location = new System.Drawing.Point(88, 386);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(58, 20);
             this.label6.TabIndex = 103;
             this.label6.Text = "Output";
             // 
             // btnRefreshDevices
             // 
-            this.btnRefreshDevices.Location = new System.Drawing.Point(218, 12);
+            this.btnRefreshDevices.Location = new System.Drawing.Point(326, 14);
+            this.btnRefreshDevices.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRefreshDevices.Name = "btnRefreshDevices";
-            this.btnRefreshDevices.Size = new System.Drawing.Size(75, 23);
+            this.btnRefreshDevices.Size = new System.Drawing.Size(112, 35);
             this.btnRefreshDevices.TabIndex = 104;
             this.btnRefreshDevices.Text = "&Refresh";
             this.btnRefreshDevices.UseVisualStyleBackColor = true;
@@ -272,24 +293,26 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 220);
+            this.label3.Location = new System.Drawing.Point(18, 338);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.Size = new System.Drawing.Size(104, 20);
             this.label3.TabIndex = 105;
             this.label3.Text = "GnuPlot Path";
             // 
             // txtGnuPlotPath
             // 
-            this.txtGnuPlotPath.Location = new System.Drawing.Point(90, 217);
+            this.txtGnuPlotPath.Location = new System.Drawing.Point(135, 334);
+            this.txtGnuPlotPath.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGnuPlotPath.Name = "txtGnuPlotPath";
-            this.txtGnuPlotPath.Size = new System.Drawing.Size(202, 20);
+            this.txtGnuPlotPath.Size = new System.Drawing.Size(303, 26);
             this.txtGnuPlotPath.TabIndex = 106;
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 308);
+            this.ClientSize = new System.Drawing.Size(458, 474);
             this.Controls.Add(this.txtGnuPlotPath);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnRefreshDevices);
@@ -302,10 +325,11 @@
             this.Controls.Add(this.cbResources);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Oscilloscope GUI v1.0";
+            this.Text = "Oscilloscope GUI v1.1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.groupBox1.ResumeLayout(false);

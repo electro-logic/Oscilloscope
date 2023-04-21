@@ -14,7 +14,7 @@ namespace OscilloscopeCLI
         // Sample usage of Oscilloscope library
         static void Main(string[] args)
         {
-            // With en-US culture handle all decimal separator with '.' also on non-en-US pc
+            // Decimal separator is '.'
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 
             LongMemoryAcquisitionExample();
@@ -27,7 +27,6 @@ namespace OscilloscopeCLI
             gnuPlot.DrawGraph(csvFileName, 1);
 
             // OscilloscopePromptExample();
-
         }
 
         // 1M data point acquisition

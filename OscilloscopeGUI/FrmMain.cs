@@ -17,46 +17,51 @@ namespace OscilloscopeGUI
         {
             InitializeComponent();
         }
-
-        private void FrmMain_Load(object sender, EventArgs e)
+        void FrmMain_Load(object sender, EventArgs e)
         {
             // Update GnuPlot path
             txtGnuPlotPath.Text = _gnuplot.Path;
             RefreshDevices();
-            // There are devices connected?
+            // Are there connected devices?
             if (cbResources.Items.Count == 0)
             {
-                MessageBox.Show("Please connect oscilloscope then click on Refresh");
+                MessageBox.Show("Please connect an oscilloscope, then click Refresh");
             }
         }
-
-        private void btnConnect_Click(object sender, EventArgs e)
+        void btnConnect_Click(object sender, EventArgs e)
         {
+            if (cbResources.Items.Count == 0)
+            {
+                MessageBox.Show("Please connect an oscilloscope, then click Refresh");
+                return;
+            }
+            if(string.IsNullOrWhiteSpace(cbResources.Text))
+            {
+                MessageBox.Show("Please select a device");
+                return;
+            }
             _osc = new Oscilloscope(cbResources.Text);
-        }
 
-        private void btnSaveCSV_Click(object sender, EventArgs e)
+        }
+        void btnSaveCSV_Click(object sender, EventArgs e)
         {
             SaveCSV();
         }
-
-        private void btnRefreshDevices_Click(object sender, EventArgs e)
+        void btnRefreshDevices_Click(object sender, EventArgs e)
         {
             RefreshDevices();
         }
-
         public void RefreshDevices()
         {
             cbResources.Items.Clear();
             cbResources.Items.AddRange(Oscilloscope.GetResources());
             cbResources.SelectedIndex = cbResources.Items.Count - 1;
         }
-
         public void SaveCSV()
         {
             if (_osc == null)
             {
-                MessageBox.Show("Please connect device first");
+                MessageBox.Show("Please connect a device first");
                 return;
             }
 
@@ -124,10 +129,9 @@ namespace OscilloscopeGUI
             Cursor = Cursors.Default;
         }
 
-        private void UpdatePoints(object sender, EventArgs e)
+        void UpdatePoints(object sender, EventArgs e)
         {
             int points = 0;
-
             if (!cbCh1.Checked && !cbCh2.Checked)
             {
                 points = 0;
@@ -167,7 +171,7 @@ namespace OscilloscopeGUI
             lblPoints.Text = points.ToString();
         }
 
-        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             // SaveCSV already close device but here we close it again for double check
             _osc?.Close();

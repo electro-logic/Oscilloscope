@@ -5,56 +5,46 @@
 /// </summary>
 public class Channel
 {
-    private uint _channelID;
-    private Oscilloscope _oscilloscope;
+    uint _channelID;
+    Oscilloscope _oscilloscope;
 
     public Channel(uint channelID, Oscilloscope oscilloscope)
     {
         _channelID = channelID;
         _oscilloscope = oscilloscope;
     }
-
     // --------- Channel commands
-
     public OnOff GetBwLimit()
     {
         _oscilloscope.Write(":CHAN" + _channelID + ":BWLimit?");
         return (OnOff)GetterSetterExtension.FromDescription<OnOff>(_oscilloscope.ReadString());
     }
-
     public void SetBwLimit(OnOff value)
     {
         _oscilloscope.Write(":CHAN" + _channelID + ":BWLimit " + value.SetterDescription());
     }
-
     // TODO: Coupling
     // TODO: Display
     // TODO: Invert
-
     public double GetOffset()
     {
         _oscilloscope.Write(":CHAN" + _channelID + ":OFFS?");
         return double.Parse(_oscilloscope.ReadString());
     }
-
     public void SetOffset(double value)
     {
         _oscilloscope.Write(":CHAN" + _channelID + ":OFFS " + value);
     }
-
     // TODO: Probe
-
     public double GetScale()
     {
         _oscilloscope.Write(":CHAN" + _channelID + ":SCAL?");
         return double.Parse(_oscilloscope.ReadString());
     }
-
     public void SetScale(double value)
     {
         _oscilloscope.Write(":CHAN" + _channelID + ":SCAL " + value);
     }
-
     public WaveForm GetWaveform()
     {
         _oscilloscope.Write(":WAVEFORM:DATA? CHAN" + _channelID);
@@ -157,5 +147,4 @@ public class Channel
 
         return new WaveForm(times, data);
     }
-
 }

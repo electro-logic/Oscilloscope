@@ -10,8 +10,8 @@ using System.Text;
 /// </summary>
 public class WaveForm
 {
-    private double[] _times;
-    private List<double[]> _values;
+    double[] _times;
+    List<double[]> _values;
 
     public WaveForm(double[] times, List<double[]> values)
     {

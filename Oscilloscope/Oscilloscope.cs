@@ -10,40 +10,35 @@ using System.Threading;
 /// <summary>
 /// Handle Rigol's Oscilloscopes like model DS1102E
 /// </summary>
-public partial class Oscilloscope
+public partial class Oscilloscope : IDisposable
 {
-
-    // TODO: Implement IDisposable for closing resources and releasing oscilloscope remote control (Close call)?
-
     string _model;
     string _serialNumber;
     string _swVersion;
     Channel[] _channels;
     uint _numChannels;     // 2 Channel models like DS1102E
 
-    static MessageBasedSession _mbSession;
+    MessageBasedSession _mbSession;
     static ResourceManager _resManager = new ResourceManager();
+    bool _isDisposed;
 
     // TODO: Move in VisaHelper file
     public static string[] GetResources()
     {
         string[] results = new string[] { };
-
         try
         {
             results = _resManager.Find("?*").ToArray();
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            Debug.WriteLine(ex);
         }
-
         return results;
     }
-
     public Oscilloscope(string resource = "USB?*DS1E?*INSTR", uint channels = 2)
     {
         // TODO: check if channels is valid
-
         _numChannels = channels;
         _channels = new Channel[_numChannels];
 
@@ -64,25 +59,16 @@ public partial class Oscilloscope
         _serialNumber = fields[2];
         _swVersion = fields[3];
     }
-
     public Channel[] Channels
     {
-        get { return _channels; }
-        set { _channels = value; }
+        get => _channels;
+        set => _channels = value; 
     }
-
-    public Channel Channel1
-    {
-        get { return _channels[0]; }
-    }
-
-    public Channel Channel2
-    {
-        get { return _channels[1]; }
-    }
-
+    public Channel Channel1 => _channels[0];
+    public Channel Channel2 => _channels[1];
     /// <summary>
     /// Return Waveforms of Channel1 and Channel2
+    /// </summary>
     public WaveForm GetWaveforms()
     {
         // TODO: Improve for 4 channel model
@@ -90,22 +76,9 @@ public partial class Oscilloscope
         WaveForm wave2 = Channel2.GetWaveform();
         return new WaveForm(wave1.Times, new List<double[]>() { wave1.Values[0], wave2.Values[0] });
     }
-
-    public string Model
-    {
-        get { return _model; }
-    }
-
-    public string SerialNumber
-    {
-        get { return _serialNumber; }
-    }
-
-    public string SwVersion
-    {
-        get { return _swVersion; }
-    }
-
+    public string Model => _model;
+    public string SerialNumber => _serialNumber;
+    public string SwVersion=>_swVersion;
     public void Write(string str)
     {
         _mbSession.RawIO.Write(str);
@@ -113,13 +86,11 @@ public partial class Oscilloscope
         Thread.Sleep(50);
         // TODO: Improve and validate
     }
-
     public string ReadString()
     {
         // Read the response; omit end-of-line characters.
         return _mbSession.RawIO.ReadString().TrimEnd( '\r', '\n');
     }
-
     public byte[] Read()
     {
         // Rigol DS1102E Long Memory can acquire 1M points (1048576 bytes + 10 bytes header)            
@@ -127,7 +98,6 @@ public partial class Oscilloscope
         Debug.WriteLine(string.Format("Readed {0} bytes from device with Status {1}", readBytes.Length, status));
         return readBytes;
     }
-
     /// <summary>
     /// Wait until Trigger Status is Stop
     /// </summary>
@@ -141,7 +111,22 @@ public partial class Oscilloscope
             Thread.Sleep(50);
         }
     }
-
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!_isDisposed)
+        {
+            if (disposing)
+            {
+                _mbSession.Dispose();
+            }
+            _isDisposed = true;
+        }
+    }
+    public void Dispose()
+    {
+        // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+        Dispose(disposing: true);
+        GC.SuppressFinalize(this);
+    }
     // See OscilloscopeCommands for commands like Run, Stop, Get/Set Property, etc..
-
 }

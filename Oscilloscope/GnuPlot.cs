@@ -80,6 +80,4 @@ public class GnuPlot
         }
         gnuPlot.Close();
     }
-
-
 }

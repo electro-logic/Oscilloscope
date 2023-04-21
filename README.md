@@ -1,4 +1,4 @@
-# Oscilloscope Library and GUI for Rigol in C#
+# C# Oscilloscope Library and GUI (tested with Rigol DS1102E) 
 
 Remote control your oscilloscope, configure settings and acquire data points
 

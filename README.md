@@ -22,7 +22,7 @@ To compile the project you need:
 
 - Visual Studio 2022 with .NET desktop development workload installed
 
-- NI-VISA .NET Runtime 2023 Q2 http://www.ni.com/download/ni-visa-run-time-engine
+- NI-VISA .NET Runtime 2024 Q4 [http://www.ni.com/download/ni-visa-run-time-engine](https://www.ni.com/en/support/downloads/drivers/download.ni-visa.html)
 
 - Gnuplot 5.2 (optional for graphs, 25 MB) http://www.gnuplot.info/ see GNUPLOT section for more informations
 
@@ -98,7 +98,7 @@ You can also write some C# code to post-process CSV data and extrapolate relevan
 
 Rigol oscilloscope support Virtual Instrument Software Architecture (VISA) standard for configuring, programming, and troubleshooting instrumentation systems. 
 
-To create software that support VISA devices you need to install the NI-VISA SDK from http://www.ni.com/download/ni-visa-17.5/7220/en/:
+To create software that support VISA devices you need to install the NI-VISA SDK:
 
 
 Assembly referenced by OscilloscopeLib are located into:

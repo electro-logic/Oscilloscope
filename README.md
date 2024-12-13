@@ -22,6 +22,10 @@ To compile the project you need:
 
 - Visual Studio 2022 with .NET desktop development workload installed
 
+- NI-VISA .NET SDK 2024 Q4 [http://www.ni.com/download/ni-visa-run-time-engine](https://www.ni.com/en/support/downloads/drivers/download.ni-visa.html)
+
+To run the project you need:
+
 - NI-VISA .NET Runtime 2024 Q4 [http://www.ni.com/download/ni-visa-run-time-engine](https://www.ni.com/en/support/downloads/drivers/download.ni-visa.html)
 
 - Gnuplot 5.2 (optional for graphs, 25 MB) http://www.gnuplot.info/ see GNUPLOT section for more informations

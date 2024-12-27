@@ -116,7 +116,7 @@ Assembly referenced by OscilloscopeLib are located into:
 
 See Rigol Documentation for commands to interact with the oscilloscope
 
-https://www.rigol.eu/products/digital-oscilloscopes/1000/
+[https://www.rigol.eu/products/digital-oscilloscopes/1000/](https://eu.rigol.com/eu/Images/DS1000E_ProgrammingGuide_EN_tcm30-2863.pdf)
 
 
 ## GNUPLOT

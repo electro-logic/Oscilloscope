@@ -114,9 +114,9 @@ Assembly referenced by OscilloscopeLib are located into:
 - C:\Program Files (x86)\IVI Foundation\VISA\Microsoft.NET\Framework32\v4.0.30319\NI VISA.NET 23.3\NationalInstruments.Visa.dll     v23.3.0.49276
 
 
-See Rigol Documentation for commands to interact with the oscilloscope
+See the "Rigol Prograrmming Guide" for commands to interact with the oscilloscope
 
-[https://www.rigol.eu/products/digital-oscilloscopes/1000/](https://eu.rigol.com/eu/Images/DS1000E_ProgrammingGuide_EN_tcm30-2863.pdf)
+[https://eu.rigol.com/eu/Images/DS1000E_ProgrammingGuide_EN_tcm30-2863.pdf](https://eu.rigol.com/eu/Images/DS1000E_ProgrammingGuide_EN_tcm30-2863.pdf)
 
 
 ## GNUPLOT
@@ -136,3 +136,8 @@ http://www.gnuplot.info/
 Right click with the mouse to zoom a section of the graph
 
 *Warning:* Graph with 1M points can be slow to display and interact, another way can be analyzing data with Excel or another software
+
+
+## ADDITIONAL NOTES
+
+For legacy systems (Windows XP, etc..) an old NI-VISA 3.0 Runtime download (3 MBytes) is distributed by Rigol with the UltraSigma software and can avoid downloading the most recent package that is much larger.

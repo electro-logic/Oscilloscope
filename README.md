@@ -114,9 +114,11 @@ Assembly referenced by OscilloscopeLib are located into:
 - C:\Program Files (x86)\IVI Foundation\VISA\Microsoft.NET\Framework32\v4.0.30319\NI VISA.NET 23.3\NationalInstruments.Visa.dll     v23.3.0.49276
 
 
-See the "Rigol Prograrmming Guide" for commands to interact with the oscilloscope
+Documentation and Programming Guide:
 
-[https://eu.rigol.com/eu/Images/DS1000E_ProgrammingGuide_EN_tcm30-2863.pdf](https://eu.rigol.com/eu/Images/DS1000E_ProgrammingGuide_EN_tcm30-2863.pdf)
+[Rigol Prograrmming Guide](https://eu.rigol.com/eu/Images/DS1000E_ProgrammingGuide_EN_tcm30-2863.pdf)
+
+[DS1000E Waveform Data Formatting Guide](https://rigol.my.site.com/support/s/article/DS1000E-Waveform-Data-Formatting-Guide)
 
 
 ## GNUPLOT

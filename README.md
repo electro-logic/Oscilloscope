@@ -3,6 +3,9 @@
 Remote control your oscilloscope, configure settings and acquire data points
 
 
+# NOTE: This is a development branch and Long Mode capture is NOT working yet
+
+
 ## Projects
 
 - OscilloscopeLib is an object-oriented library for managing Rigol's Oscilloscopes (tested with DS1102E only, but should works with other models too)
@@ -22,13 +25,11 @@ To compile the project you need:
 
 - Visual Studio 2022 with .NET desktop development workload installed
 
-- NI-VISA .NET SDK 2024 Q4 [http://www.ni.com/download/ni-visa-run-time-engine](https://www.ni.com/en/support/downloads/drivers/download.ni-visa.html)
-
 To run the project you need:
 
-- NI-VISA .NET Runtime 2024 Q4 [http://www.ni.com/download/ni-visa-run-time-engine](https://www.ni.com/en/support/downloads/drivers/download.ni-visa.html)
+- USB Test and Measurement Device (IVI) driver (ausbtmc.sys, 24 kb)
 
-- Gnuplot 5.2 (optional for graphs, 25 MB) http://www.gnuplot.info/ see GNUPLOT section for more informations
+- Gnuplot 6.0 (optional for graphs, 25 MB) http://www.gnuplot.info/ see GNUPLOT section for more informations
 
 Please ensure that your Oscilloscope firmware is updated: https://www.rigolna.com/firmware
 
@@ -81,7 +82,7 @@ This project started as auxiliary tool for a bigger project, so code may not be 
 
 I initially wrote this library in 2014 to track the velocity profile of a stepper motor, driven by a real-time driver that I have built.
 
-I think that this project can be useful to people who own a Rigol oscilloscope, so I updated it with NI-VISA 2023 Q2 to support Windows 11.
+I think that this project can be useful to people who own a Rigol oscilloscope.
 
 
 Here are some images to better understand what this library allow you to do with very little work.
@@ -100,21 +101,12 @@ Here are some images to better understand what this library allow you to do with
 You can also write some C# code to post-process CSV data and extrapolate relevant information for your application (ex. I used it to get velocity profile of my system from the waveform of a revolution detector).
 
 
-## VISA SDK
+## IVI Driver SDK
 
-Rigol oscilloscope support Virtual Instrument Software Architecture (VISA) standard for configuring, programming, and troubleshooting instrumentation systems. 
-
-To create software that support VISA devices you need to install the NI-VISA SDK:
+TODO
 
 
-Assembly referenced by OscilloscopeLib are located into:
-
-- C:\Program Files (x86)\IVI Foundation\VISA\Microsoft.NET\Framework32\v2.0.50727\VISA.NET Shared Components 7.2.0\Ivi.Visa.dll     v7.2.0.0
-
-- C:\Program Files (x86)\IVI Foundation\VISA\Microsoft.NET\Framework32\v4.0.30319\NI VISA.NET 23.3\NationalInstruments.Visa.dll     v23.3.0.49276
-
-
-Documentation and Programming Guide:
+## Documentation and Programming Guide:
 
 [Rigol Prograrmming Guide](https://eu.rigol.com/eu/Images/DS1000E_ProgrammingGuide_EN_tcm30-2863.pdf)
 
@@ -125,7 +117,7 @@ Documentation and Programming Guide:
 
 Graphs are generated with Gnuplot to avoid reinventing the wheel. Data can be analyzed and graphed also with Excel or any software that can open CSV files.
 
-Gnuplot 5.2 (for graphs, optional)
+Gnuplot 6.0 (for graphs, optional)
 
 http://www.gnuplot.info/
 
@@ -139,7 +131,3 @@ Right click with the mouse to zoom a section of the graph
 
 *Warning:* Graph with 1M points can be slow to display and interact, another way can be analyzing data with Excel or another software
 
-
-## ADDITIONAL NOTES
-
-For legacy systems (Windows XP, etc..) an old NI-VISA 3.0 Runtime download (3 MBytes) is distributed by Rigol with the UltraSigma software and can avoid downloading the most recent package that is much larger.

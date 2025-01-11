@@ -32,7 +32,7 @@ namespace OscilloscopeCLI
         // 1M data point acquisition
         static void LongMemoryAcquisitionExample()
         {
-            Oscilloscope rigol = new Oscilloscope();
+            var rigol = new Oscilloscope();
             rigol.Run();
             rigol.SetWaveformPointsMode(PointsMode.Maximum);
             rigol.SetAcquireMemoryDepth(AcquireMemoryDepth.Long);

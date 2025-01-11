@@ -1,10 +1,7 @@
 ﻿// Author: Leonardo Tazzini
 
-using NationalInstruments.Visa;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Threading;
 
 /// <summary>
@@ -17,35 +14,19 @@ public partial class Oscilloscope : IDisposable
     string _swVersion;
     Channel[] _channels;
     uint _numChannels;     // 2 Channel models like DS1102E
-
-    MessageBasedSession _mbSession;
-    static ResourceManager _resManager = new ResourceManager();
+    IScpi _scpi;
     bool _isDisposed;
 
-    // TODO: Move in VisaHelper file
-    public static string[] GetResources()
-    {
-        string[] results = new string[] { };
-        try
-        {
-            results = _resManager.Find("?*").ToArray();
-        }
-        catch (Exception ex)
-        {
-            Debug.WriteLine(ex);
-        }
-        return results;
-    }
-    public Oscilloscope(string resource = "USB?*DS1E?*INSTR", uint channels = 2)
+    public Oscilloscope(uint channels = 2) : this(GetResources()[0], channels) { }
+    public Oscilloscope(string resource, uint channels = 2)
     {
         // TODO: check if channels is valid
         _numChannels = channels;
         _channels = new Channel[_numChannels];
 
-        // Create Message based session, open first resource found
-        _mbSession = (MessageBasedSession)_resManager.Open(_resManager.Find(resource).First());
-        _mbSession.TimeoutMilliseconds = 1000 * 60 * 5;
-        
+        _scpi = new IviScpi();
+        _scpi.Open(resource);
+
         // Create channel object for every physical channel of oscilloscope
         for (uint i = 0; i < _numChannels; i++)
         {
@@ -59,10 +40,11 @@ public partial class Oscilloscope : IDisposable
         _serialNumber = fields[2];
         _swVersion = fields[3];
     }
+    public static string[] GetResources() => new IviScpi().GetResources();
     public Channel[] Channels
     {
         get => _channels;
-        set => _channels = value; 
+        set => _channels = value;
     }
     public Channel Channel1 => _channels[0];
     public Channel Channel2 => _channels[1];
@@ -78,25 +60,13 @@ public partial class Oscilloscope : IDisposable
     }
     public string Model => _model;
     public string SerialNumber => _serialNumber;
-    public string SwVersion=>_swVersion;
-    public void Write(string str)
-    {
-        _mbSession.RawIO.Write(str);
-        // Give time to process command
-        Thread.Sleep(50);
-        // TODO: Improve and validate
-    }
-    public string ReadString()
-    {
-        // Read the response; omit end-of-line characters.
-        return _mbSession.RawIO.ReadString().TrimEnd( '\r', '\n');
-    }
+    public string SwVersion => _swVersion;
+    public void Write(string str) => _scpi.Write(str);
+    public string ReadString() => _scpi.ReadString();
     public byte[] Read()
     {
         // Rigol DS1102E Long Memory can acquire 1M points (1048576 bytes + 10 bytes header)            
-        var readBytes = _mbSession.RawIO.Read(1048586, out var status);
-        Debug.WriteLine(string.Format("Readed {0} bytes from device with Status {1}", readBytes.Length, status));
-        return readBytes;
+        return _scpi.Read(1048586);
     }
     /// <summary>
     /// Wait until Trigger Status is Stop
@@ -117,7 +87,7 @@ public partial class Oscilloscope : IDisposable
         {
             if (disposing)
             {
-                _mbSession.Dispose();
+                _scpi.Dispose();
             }
             _isDisposed = true;
         }

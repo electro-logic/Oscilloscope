@@ -45,7 +45,14 @@ namespace OscilloscopeGUI
         }
         void btnSaveCSV_Click(object sender, EventArgs e)
         {
-            SaveCSV();
+            try
+            {
+                SaveCSV();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         void btnRefreshDevices_Click(object sender, EventArgs e)
         {

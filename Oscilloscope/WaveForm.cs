@@ -41,12 +41,18 @@ public class WaveForm
     /// <summary>
     /// Save Waveform in a CSV (Comma Separated Values) file separated by semicolon
     /// </summary>
-    public void SaveCSV(string fileName)
+    public void SaveCSV(string fileName, bool addSeparator = false)
     {
         StringBuilder sb = new StringBuilder(_times.Length * 10);
 
         int valuesCount = _values.Count;
         int timesCount = _times.Count();
+
+        if (addSeparator)
+        {
+            // Excel-compatibility
+            sb.AppendLine("sep=;");
+        }
 
         // Header
         sb.Append("TIME(s);");

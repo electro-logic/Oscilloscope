@@ -3,6 +3,7 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Text;
 using System.Threading;
 
 namespace OscilloscopeCLI
@@ -17,6 +18,7 @@ namespace OscilloscopeCLI
             // Decimal separator is '.'
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 
+            /*
             LongMemoryAcquisitionExample();
 
             // Display acquired data
@@ -25,8 +27,9 @@ namespace OscilloscopeCLI
             // Draw CSV file with GNU Plot      
             GnuPlot gnuPlot = new GnuPlot();    // NB: change path of gnuplot.exe with alternative constructor
             gnuPlot.DrawGraph(csvFileName, 1);
+            */
 
-            // OscilloscopePromptExample();
+            OscilloscopePromptExample();
         }
 
         // 1M data point acquisition
@@ -50,6 +53,7 @@ namespace OscilloscopeCLI
         static void OscilloscopePromptExample()
         {
             Console.WriteLine("Oscilloscope Command Prompt");
+            Console.WriteLine("Please choose an instrument by typing the index");
             Console.WriteLine("Instruments:");
             string[] resources = Oscilloscope.GetResources();
             for (int i = 0; i < resources.Length; i++)
@@ -62,12 +66,18 @@ namespace OscilloscopeCLI
             menu:
             if (!int.TryParse(Console.ReadLine().Trim(), out resIndex))
             {
-                Console.WriteLine("Please choose instrument ");
+                Console.WriteLine("Please an choose instrument");
                 goto menu;
             }
 
             Console.WriteLine("Example commands:");
-            Console.WriteLine("*IDN?");
+            Console.WriteLine("*IDN?");            
+            Console.WriteLine(":WAVeform:POINts:MODE NORMAL|MAXIMUM|RAW");
+            Console.WriteLine(":ACQuire:MEMDepth NORMAL|LONG");
+            Console.WriteLine(":TRIGger:EDGE:SWEep SINGLE|NORMAL|AUTO");
+            Console.WriteLine(":TRIGger:STATus?");
+            Console.WriteLine(":RUN");            
+            Console.WriteLine(":STOP");
             Console.WriteLine(":WAVEFORM:DATA? CHAN1");
             Console.WriteLine("quit");
 
@@ -75,14 +85,36 @@ namespace OscilloscopeCLI
             Oscilloscope rigol = new Oscilloscope(resources[resIndex]);
             while (true)
             {
-                Console.Write(">");
-                string cmd = Console.ReadLine();
-                if (cmd == "quit")
-                    break;
-                rigol.Write(cmd);
-                if (cmd.Contains("?"))
+                try
                 {
-                    Console.WriteLine(rigol.ReadString());
+                    Console.Write(">");
+                    string cmd = Console.ReadLine();
+                    if (cmd == "quit")
+                        break;
+                    rigol.Write(cmd);
+                    if (cmd.StartsWith(":WAVEFORM:DATA?"))
+                    {
+                        var bytes = rigol.Read();
+                        Console.WriteLine($"{bytes.Length} bytes received");
+                        if (bytes.Length > 0)
+                        {
+                            var sb = new StringBuilder();
+                            foreach (byte b in bytes)
+                            {
+                                sb.Append($"{b.ToString("X2")}-");
+                            }
+                            sb.Remove(sb.Length - 1, 1);
+                            Console.WriteLine(sb.ToString());
+                        }
+                    }
+                    else if (cmd.Contains("?"))
+                    {
+                        Console.WriteLine(rigol.ReadString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
                 }
             }
             rigol.Close();

@@ -3,7 +3,7 @@
 Remote control your oscilloscope, configure settings and acquire data points
 
 
-# NOTE: This is a development branch and AcquireMemoryDepth.Long is NOT working yet
+# NOTE: This is a development branch and PointsMode.Maximum is NOT working yet
 
 
 ## Projects

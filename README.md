@@ -2,13 +2,11 @@
 
 Remote control your oscilloscope, configure settings and acquire data points
 
-
-# NOTE: This is a development branch and PointsMode.Maximum is NOT working yet
-
+# NOTE: This is a development branch and is NOT fully tested. Purpose of this branch is to remove any dependencies from the NI-VISA Runtime, only a small driver (24 KBytes) is required.
 
 ## Projects
 
-- OscilloscopeLib is an object-oriented library for managing Rigol's Oscilloscopes (tested with DS1102E only, but should works with other models too)
+- OscilloscopeLib is an object-oriented library for managing Rigol's Oscilloscopes (tested with DS1102E only, but should works with few other models)
 
 - OscilloscopeCLI is a command line sample, showing how to use OscilloscopeLib
 
@@ -27,7 +25,7 @@ To compile the project you need:
 
 To run the project you need:
 
-- USB Test and Measurement Device (IVI) driver (ausbtmc.sys, 24 kb)
+- USB Test and Measurement Device (IVI) driver (ausbtmc.sys, 24 kb), see below
 
 - Gnuplot 6.0 (optional for graphs, 25 MB) http://www.gnuplot.info/ see GNUPLOT section for more informations
 
@@ -101,9 +99,9 @@ Here are some images to better understand what this library allow you to do with
 You can also write some C# code to post-process CSV data and extrapolate relevant information for your application (ex. I used it to get velocity profile of my system from the waveform of a revolution detector).
 
 
-## IVI Driver SDK
+## USB Test and Measurement Device (IVI) driver
 
-TODO
+The driver is distributed with the NI-VISA Runtime inside the "IVI USB Staging" folder installed on the system. This folder is the only required driver to interface the oscilloscope with the computer and the rest of the NI-VISA Runtime can be uninstalled.
 
 
 ## Documentation and Programming Guide:

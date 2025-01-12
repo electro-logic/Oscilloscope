@@ -132,7 +132,7 @@
             this.rbLong.Location = new System.Drawing.Point(120, 2);
             this.rbLong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbLong.Name = "rbLong";
-            this.rbLong.Size = new System.Drawing.Size(63, 24);
+            this.rbLong.Size = new System.Drawing.Size(70, 24);
             this.rbLong.TabIndex = 15;
             this.rbLong.Text = "Long";
             this.rbLong.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@
             this.rbNormal.Location = new System.Drawing.Point(0, 2);
             this.rbNormal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbNormal.Name = "rbNormal";
-            this.rbNormal.Size = new System.Drawing.Size(77, 24);
+            this.rbNormal.Size = new System.Drawing.Size(84, 24);
             this.rbNormal.TabIndex = 12;
             this.rbNormal.TabStop = true;
             this.rbNormal.Text = "Normal";
@@ -158,7 +158,7 @@
             this.rbMaxPoints.Location = new System.Drawing.Point(262, 108);
             this.rbMaxPoints.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbMaxPoints.Name = "rbMaxPoints";
-            this.rbMaxPoints.Size = new System.Drawing.Size(94, 24);
+            this.rbMaxPoints.Size = new System.Drawing.Size(101, 24);
             this.rbMaxPoints.TabIndex = 20;
             this.rbMaxPoints.Text = "Maximum";
             this.rbMaxPoints.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@
             this.rbNormalPoints.Location = new System.Drawing.Point(142, 108);
             this.rbNormalPoints.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbNormalPoints.Name = "rbNormalPoints";
-            this.rbNormalPoints.Size = new System.Drawing.Size(77, 24);
+            this.rbNormalPoints.Size = new System.Drawing.Size(84, 24);
             this.rbNormalPoints.TabIndex = 19;
             this.rbNormalPoints.TabStop = true;
             this.rbNormalPoints.Text = "Normal";
@@ -214,7 +214,7 @@
             this.cbCh2.Location = new System.Drawing.Point(262, 37);
             this.cbCh2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbCh2.Name = "cbCh2";
-            this.cbCh2.Size = new System.Drawing.Size(100, 24);
+            this.cbCh2.Size = new System.Drawing.Size(107, 24);
             this.cbCh2.TabIndex = 14;
             this.cbCh2.Text = "Channel 2";
             this.cbCh2.UseVisualStyleBackColor = true;
@@ -228,7 +228,7 @@
             this.cbCh1.Location = new System.Drawing.Point(142, 37);
             this.cbCh1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbCh1.Name = "cbCh1";
-            this.cbCh1.Size = new System.Drawing.Size(100, 24);
+            this.cbCh1.Size = new System.Drawing.Size(107, 24);
             this.cbCh1.TabIndex = 13;
             this.cbCh1.Text = "Channel 1";
             this.cbCh1.UseVisualStyleBackColor = true;
@@ -251,7 +251,7 @@
             this.rbOutGnuPlot.Location = new System.Drawing.Point(160, 386);
             this.rbOutGnuPlot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbOutGnuPlot.Name = "rbOutGnuPlot";
-            this.rbOutGnuPlot.Size = new System.Drawing.Size(85, 24);
+            this.rbOutGnuPlot.Size = new System.Drawing.Size(92, 24);
             this.rbOutGnuPlot.TabIndex = 101;
             this.rbOutGnuPlot.Text = "GnuPlot";
             this.rbOutGnuPlot.UseVisualStyleBackColor = true;
@@ -263,7 +263,7 @@
             this.rbOutPNG.Location = new System.Drawing.Point(280, 386);
             this.rbOutPNG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbOutPNG.Name = "rbOutPNG";
-            this.rbOutPNG.Size = new System.Drawing.Size(110, 24);
+            this.rbOutPNG.Size = new System.Drawing.Size(117, 24);
             this.rbOutPNG.TabIndex = 102;
             this.rbOutPNG.TabStop = true;
             this.rbOutPNG.Text = "PNG Image";
@@ -329,7 +329,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Oscilloscope GUI v1.1";
+            this.Text = "Oscilloscope GUI v1.2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.groupBox1.ResumeLayout(false);

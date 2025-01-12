@@ -47,12 +47,14 @@ namespace OscilloscopeGUI
         {
             try
             {
+                Cursor = Cursors.WaitCursor;
                 SaveCSV();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            Cursor = Cursors.Default;
         }
         void btnRefreshDevices_Click(object sender, EventArgs e)
         {
@@ -72,7 +74,6 @@ namespace OscilloscopeGUI
                 return;
             }
 
-            Cursor = Cursors.WaitCursor;
             _gnuplot.Path = txtGnuPlotPath.Text;
 
             _osc.Run();
@@ -132,8 +133,6 @@ namespace OscilloscopeGUI
 
             // Release oscilloscope remote control
             _osc.Close();
-
-            Cursor = Cursors.Default;
         }
 
         void UpdatePoints(object sender, EventArgs e)

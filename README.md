@@ -2,8 +2,6 @@
 
 Remote control your oscilloscope, configure settings and acquire data points
 
-To avoid installing the NI-VISA Runtime (few Gigabytes), please have a look at the branch https://github.com/electro-logic/Oscilloscope/tree/TinyDriver that needs a tiny driver (24 KBytes) only.
-
 
 ## Projects
 
@@ -144,4 +142,4 @@ Right click with the mouse to zoom a section of the graph
 
 ## ADDITIONAL NOTES
 
-For legacy systems (Windows XP, etc..) an old NI-VISA 3.0 Runtime download (3 MBytes) is distributed by Rigol with the UltraSigma software and can avoid downloading the most recent package that is much larger. NI-VISA 5.4.1 Runtime download (74 MBytes) is available for OS up to Windows 8.
+For legacy systems (Windows XP, etc..) an old NI-VISA 3.0 Runtime download (3 MBytes) is distributed by Rigol with the UltraSigma software and can avoid downloading the most recent package that is much larger. NI-VISA 5.4.1 Runtime download (74 MBytes) is available for OS up to Windows 8. To avoid the NI-VISA Runtime (few Gigabytes), please have a look at the branch https://github.com/electro-logic/Oscilloscope/tree/TinyDriver that needs a tiny driver (24 KBytes) only.

@@ -2,6 +2,8 @@
 
 Remote control your oscilloscope, configure settings and acquire data points
 
+To avoid installing the NI-VISA Runtime (few Gigabytes), please have a look at the branch https://github.com/electro-logic/Oscilloscope/tree/TinyDriver
+
 
 ## Projects
 

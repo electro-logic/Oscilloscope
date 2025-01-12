@@ -81,7 +81,7 @@ This project started as auxiliary tool for a bigger project, so code may not be 
 
 I initially wrote this library in 2014 to track the velocity profile of a stepper motor, driven by a real-time driver that I have built.
 
-I think that this project can be useful to people who own a Rigol oscilloscope, so I updated it with NI-VISA 2023 Q2 to support Windows 11.
+I think that this project can be useful to people who own a Rigol oscilloscope, so I updated it with NI-VISA 2024 Q4 to support Windows 11.
 
 
 Here are some images to better understand what this library allow you to do with very little work.
@@ -142,4 +142,4 @@ Right click with the mouse to zoom a section of the graph
 
 ## ADDITIONAL NOTES
 
-For legacy systems (Windows XP, etc..) an old NI-VISA 3.0 Runtime download (3 MBytes) is distributed by Rigol with the UltraSigma software and can avoid downloading the most recent package that is much larger.
+For legacy systems (Windows XP, etc..) an old NI-VISA 3.0 Runtime download (3 MBytes) is distributed by Rigol with the UltraSigma software and can avoid downloading the most recent package that is much larger. NI-VISA 5.4.1 Runtime download (74 MBytes) is available for OS up to Windows 8.

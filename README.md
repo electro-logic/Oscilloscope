@@ -2,7 +2,9 @@
 
 Remote control your oscilloscope, configure settings and acquire data points
 
-# NOTE: This is a development branch and is NOT fully tested. Purpose of this branch is to remove any dependencies from the NI-VISA Runtime, only a small driver (24 KBytes) is required.
+# NOTE: This is a development branch and is NOT fully tested.
+
+Purpose of this branch is to remove any dependencies from the NI-VISA Runtime, only a small driver (24 KBytes) is required.
 
 ## Projects
 

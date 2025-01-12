@@ -29,7 +29,7 @@ To run the project you need:
 
 - USB Test and Measurement Device (IVI) driver (ausbtmc.sys, 24 kb), see below
 
-- Gnuplot 6.0 (optional for graphs, 25 MB) http://www.gnuplot.info/ see GNUPLOT section for more informations
+- Gnuplot 6.0 (optional for graphs, 47 MB) http://www.gnuplot.info/ see GNUPLOT section for more informations
 
 Please ensure that your Oscilloscope firmware is updated: https://www.rigolna.com/firmware
 

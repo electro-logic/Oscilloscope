@@ -30,8 +30,6 @@ To run the project you need:
 
 - Gnuplot 5.2 (optional for graphs, 25 MB) http://www.gnuplot.info/ see GNUPLOT section for more informations
 
-Please ensure that your Oscilloscope firmware is updated: https://www.rigolna.com/firmware
-
 
 ## Screenshoots
 

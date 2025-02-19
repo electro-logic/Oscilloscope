@@ -141,3 +141,5 @@ Right click with the mouse to zoom a section of the graph
 ## ADDITIONAL NOTES
 
 For legacy systems (Windows XP, etc..) an old NI-VISA 3.0 Runtime download (3 MBytes) is distributed by Rigol with the UltraSigma software and can avoid downloading the most recent package that is much larger. NI-VISA 5.4.1 Runtime download (74 MBytes) is available for OS up to Windows 8. To avoid the NI-VISA Runtime (few Gigabytes), please have a look at the branch https://github.com/electro-logic/Oscilloscope/tree/TinyDriver that needs a tiny driver (24 KBytes) only.
+
+DS1102E firmware v00.04.04.00.00 (AUG 2020) is breaking the "Long Memory", it's advised to NOT update the firmware. Please also see https://www.eevblog.com/forum/testgear/rigol-ds1052e-firmware-v00-04-04-00-00-from-20200827

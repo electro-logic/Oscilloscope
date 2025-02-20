@@ -147,4 +147,4 @@ DS1102E firmware v00.04.04.00.00 (AUG 2020) is breaking the "Long Memory", it's 
 
 ## OSZI WAVEFORM ANALYZER
 
-Another interesting project to capture and analyze data from Rigol oscilloscopes: https://netcult.ch/elmue/Oszi-Waveform-Analyzer
+Another interesting project to capture and analyze data from Rigol oscilloscopes: https://github.com/Elmue/Oszi-Waveform-Analyzer

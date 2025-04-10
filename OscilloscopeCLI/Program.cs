@@ -96,16 +96,16 @@ namespace OscilloscopeCLI
                     {
                         var bytes = rigol.Read();
                         Console.WriteLine($"{bytes.Length} bytes received");
-                        if (bytes.Length > 0)
-                        {
-                            var sb = new StringBuilder();
-                            foreach (byte b in bytes)
-                            {
-                                sb.Append($"{b.ToString("X2")}-");
-                            }
-                            sb.Remove(sb.Length - 1, 1);
-                            Console.WriteLine(sb.ToString());
-                        }
+                        //if (bytes.Length > 0)
+                        //{
+                        //    var sb = new StringBuilder();
+                        //    foreach (byte b in bytes)
+                        //    {
+                        //        sb.Append($"{b.ToString("X2")}-");
+                        //    }
+                        //    sb.Remove(sb.Length - 1, 1);
+                        //    Console.WriteLine(sb.ToString());
+                        //}
                     }
                     else if (cmd.Contains("?"))
                     {

@@ -2,9 +2,7 @@
 
 Remote control your oscilloscope, configure settings and acquire data points
 
-# NOTE: This is a development branch and is NOT fully tested.
-
-Purpose of this branch is to remove any dependencies from the NI-VISA Runtime, only a small driver (24 KBytes) is required.
+# NOTE: This is a development branch for the Serial (RS232) interface and is NOT fully tested.
 
 ## Projects
 
@@ -14,24 +12,18 @@ Purpose of this branch is to remove any dependencies from the NI-VISA Runtime, o
 
 - OscilloscopeGUI is a GUI for easy data acquisition and display
 
-- OscilloscopeTest contains Unit Tests for easily checking if your own oscilloscope model is compliant with library
-
 
 ## Requirements
 
 To compile the project you need:
 
-- .NET Framework 4.8
+- .NET 9.0
 
 - Visual Studio 2022 with .NET desktop development workload installed
 
 To run the project you need:
 
-- USB Test and Measurement Device (IVI) driver (ausbtmc.sys, 24 kb), see below
-
 - Gnuplot 6.0 (optional for graphs, 47 MB) http://www.gnuplot.info/ see GNUPLOT section for more informations
-
-Please ensure that your Oscilloscope firmware is updated: https://www.rigolna.com/firmware
 
 
 ## Screenshoots
@@ -101,10 +93,6 @@ Here are some images to better understand what this library allow you to do with
 You can also write some C# code to post-process CSV data and extrapolate relevant information for your application (ex. I used it to get velocity profile of my system from the waveform of a revolution detector).
 
 
-## USB Test and Measurement Device (IVI) driver
-
-The driver is distributed with the NI-VISA Runtime inside the "IVI USB Staging" folder installed on the system. This folder is the only required driver to interface the oscilloscope with the computer and the rest of the NI-VISA Runtime can be uninstalled.
-
 
 ## Documentation and Programming Guide:
 
@@ -130,4 +118,3 @@ http://www.gnuplot.info/
 Right click with the mouse to zoom a section of the graph
 
 *Warning:* Graph with 1M points can be slow to display and interact, another way can be analyzing data with Excel or another software
-

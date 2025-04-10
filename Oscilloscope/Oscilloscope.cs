@@ -24,8 +24,11 @@ public partial class Oscilloscope : IDisposable
         _numChannels = channels;
         _channels = new Channel[_numChannels];
 
-        _scpi = new IviScpi();
-        _scpi.Open(resource);
+        _scpi = new SerialScpi();
+        _scpi.Open("COM6");
+
+        //_scpi = new IviScpi();
+        //_scpi.Open(resource);
 
         // Create channel object for every physical channel of oscilloscope
         for (uint i = 0; i < _numChannels; i++)
@@ -40,7 +43,8 @@ public partial class Oscilloscope : IDisposable
         _serialNumber = fields[2];
         _swVersion = fields[3];
     }
-    public static string[] GetResources() => new IviScpi().GetResources();
+    //public static string[] GetResources() => new IviScpi().GetResources();
+    public static string[] GetResources() => new SerialScpi().GetResources();
     public Channel[] Channels
     {
         get => _channels;

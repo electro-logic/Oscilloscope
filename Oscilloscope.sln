@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OscilloscopeTest", "OscilloscopeTest\OscilloscopeTest.csproj", "{38B8E55F-06FF-435F-8D4A-0967A9B94F4F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OscilloscopeGUI", "OscilloscopeGUI\OscilloscopeGUI.csproj", "{ADFC469D-78BB-415D-AE23-B6F5D5A5BDFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OscilloscopeLib", "Oscilloscope\OscilloscopeLib.csproj", "{6BEA399D-CD60-4AF9-8499-3F720A5EDE80}"
@@ -22,10 +20,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{38B8E55F-06FF-435F-8D4A-0967A9B94F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38B8E55F-06FF-435F-8D4A-0967A9B94F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38B8E55F-06FF-435F-8D4A-0967A9B94F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38B8E55F-06FF-435F-8D4A-0967A9B94F4F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ADFC469D-78BB-415D-AE23-B6F5D5A5BDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ADFC469D-78BB-415D-AE23-B6F5D5A5BDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADFC469D-78BB-415D-AE23-B6F5D5A5BDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
